@@ -108,6 +108,18 @@ Run the checks with `claude plugin validate .` and `claude plugin test .`.
 
 Built on [context-bar](https://github.com/hamzafer/claude-code-mods) by Hamza Zafar (MIT), redesigned around a quieter, single-line layout.
 
+## Quiet mods
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/arthurglaizal/quiet-model/main/docs/quiet-mods.png" alt="Quiet Token Bar and Quiet Model stacked above the Claude Code prompt" width="100%">
+</p>
+
+The Quiet mods share one design: grey by default, color only when something needs you. They stack neatly above the prompt.
+
+| Mod | Description |
+| --- | --- |
+| [Quiet Model](https://github.com/arthurglaizal/quiet-model) | Pick the model and the effort in one quiet grey row: Haiku, Sonnet, Opus or Fable, from Low to Max, for the rest of the session. |
+
 ## Support
 
 If you find my work useful, you can [buy me a coffee](https://ko-fi.com/arturo_ux) ☕️
