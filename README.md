@@ -111,7 +111,7 @@ Built on [context-bar](https://github.com/hamzafer/claude-code-mods) by Hamza Za
 ## Quiet mods
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/arthurglaizal/quiet-model/main/docs/quiet-mods.png" alt="Quiet Token Bar and Quiet Model stacked above the Claude Code prompt" width="100%">
+  <img src="https://github.com/arthurglaizal/quiet-model/releases/download/v1.0.0/quiet-mods.png" alt="Quiet Token Bar and Quiet Model stacked above the Claude Code prompt" width="100%">
 </p>
 
 The Quiet mods share one design: grey by default, color only when something needs you. They stack neatly above the prompt.
@@ -119,6 +119,7 @@ The Quiet mods share one design: grey by default, color only when something need
 | Mod | Description |
 | --- | --- |
 | [Quiet Model](https://github.com/arthurglaizal/quiet-model) | Pick the model and the effort in one quiet grey row: Haiku, Sonnet, Opus or Fable, from Low to Max, for the rest of the session. |
+| [Quiet Cost](https://github.com/arthurglaizal/quiet-cost) | What each reply cost, in one quiet grey line under it: an estimated price, the time and the tokens, and more figures you pick. |
 
 ## Support
 
