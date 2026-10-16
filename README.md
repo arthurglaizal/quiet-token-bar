@@ -12,79 +12,43 @@ It stays neutral by default. A figure only turns orange, then red, when it gets 
 
 ## What it shows
 
-The same single line comes in two designs.
-
-**Desktop app**: the design in the demo above, and the reference. Small grey text, real stripes and dots drawn as SVG, tooltips on hover.
-
-**Terminal**: the same line drawn with characters, at the terminal's own text size. It looks like this:
+On desktop, small grey text with real stripes and dots. In the terminal, the same line in characters:
 
 ```txt
 Context  ▆▆⠿⠿⠿⠿────────────▃   491k of 967k  51%  ≍  │ limit  9%  4%  ∨  ×
 ```
 
-Tooltips are less reliable in a terminal, so nothing essential depends on them.
-
-From left to right:
-
 - **The bar**: what fills the window (system prompt, tools, MCP tools, memory files, skills, messages), then free space and the compaction buffer. Each category has its own pattern, so it reads without color.
-- **The fill**: tokens used against the real limit, the point where auto-compaction runs, and the matching percentage.
-- **Compact**: runs `/compact` for you, so the compaction shows in the conversation as if you had typed it.
-- **Limits**: your 5-hour session and weekly usage, in that order. Hover for the full label and the reset time. A plan without a session window shows the weekly one alone.
-- **Details**: the chevron unfolds a legend with each category's tokens and share.
-- **Close**: hides the bar. Your choice is kept across sessions.
+- **The fill**: tokens used against the point where auto-compaction runs, and the percentage.
+- **Compact**: runs `/compact` for you, as if you had typed it.
+- **Limits**: your 5-hour session and weekly usage. Hover for the reset time.
+- **Details**: the chevron unfolds each category's tokens and share.
+- **Close**: hides the bar. `/quiet-token-bar` brings it back.
 
-Everything is grey until a figure reaches 70% (orange), then 90% (red).
+Everything is grey until a figure reaches 70% (orange), then 90% (red). The figures come from the same breakdown `/context` draws, refreshed after each turn.
 
-## How to use
-
-Once installed, the bar appears above the prompt in every new session. It refreshes after each turn and after a compaction, from the same breakdown `/context` draws, estimated locally (no extra API calls).
-
-| Action | How |
-| --- | --- |
-| Show or hide the bar | `/quiet-token-bar` |
-| Compact now | the compact button after the percentage |
-| See the details | the chevron |
-| See what a segment or a limit is | hover it |
-
-## Limitations
-
-- Mods are a recent Claude Code feature: you need **Claude Code 2.1.287 or later**, and an update can change the mod API.
-- Session and weekly limits appear only when you are signed in with a Claude subscription. They are known after the first response; until then the bar shows the last values seen, if they have not reset.
-- If Claude is answering, the compact button's `/compact` waits until the answer is done.
-- On desktop, widths are estimated from terminal columns, so spacing can shift slightly with the window size.
-
-## What it runs and keeps
-
-- **No network requests.** The figures come from Claude Code itself: the same breakdown `/context` draws, and the usage limits Claude Code already receives. Nothing is sent anywhere.
-- **One command, only on click.** The compact button runs `/compact`, exactly as if you had typed it, and only when you click it. The mod never compacts on its own.
-- **After a compaction**, it only re-reads the context to update the bar. It never changes, delays or blocks the compaction.
-- **Two values kept on your machine**, in Claude Code's plugin storage: whether you closed the bar, and the last limit percentages seen, so the bar can show them before the first response.
-
-## Install in Claude Code
-
-This repository is its own plugin marketplace.
+## Install
 
 ```sh
 claude plugin marketplace add arthurglaizal/quiet-token-bar
 claude plugin install quiet-token-bar@arturo-mods
 ```
 
-Or, in a Claude Code session:
+Start a new session and the bar appears. To update later: `claude plugin update quiet-token-bar@arturo-mods`. To try it without installing, clone the repository and run `claude --plugin-dir ./quiet-token-bar`.
 
-```txt
-/plugin marketplace add arthurglaizal/quiet-token-bar
-/plugin install quiet-token-bar@arturo-mods
-```
+Installed it as Compact Token Bar, before 1.1.0? Remove it first with `claude plugin uninstall compact-token-bar@arturo-mods`.
 
-Start a new session and the bar appears above the prompt.
+## Limitations
 
-This mod was called Compact Token Bar before 1.1.0. If you installed it under that name, remove it first with `claude plugin uninstall compact-token-bar@arturo-mods`, then run `claude plugin marketplace update arturo-mods` and install it as above.
+- Needs Claude Code 2.1.287 or later. An update can change the mod API.
+- Session and weekly limits need a Claude subscription, and show after the first response.
+- While Claude is answering, Compact waits for the answer to end.
 
-To try it without installing, clone the repository and run:
+## What it runs and keeps
 
-```sh
-claude --plugin-dir ./quiet-token-bar
-```
+- **No network requests.** The figures come from Claude Code itself. Nothing is sent anywhere.
+- **One command, only on click.** The compact button runs `/compact`. The mod never compacts on its own.
+- **Two values kept on your machine**: whether you closed the bar, and the last limits seen, to show them before the first response.
 
 ## Repository structure
 
