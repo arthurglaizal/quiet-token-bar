@@ -47,7 +47,13 @@ Installed it as Compact Token Bar, before 1.1.0? Remove it first with `claude pl
 ## What it runs and keeps
 
 - **No network requests.** The figures come from Claude Code itself. Nothing is sent anywhere.
-- **One command, only on click.** The compact button runs `/compact`. The mod never compacts on its own.
+- **No credentials.** It reads no token, API key, environment variable or file: the context and the limits come from Claude Code's own session usage.
+- **One command, only on click.** The compact button runs `/compact`, as if you typed it, so the compaction shows in the conversation. The mod never compacts on its own and runs no other command.
+- **Hooks**:
+  - `command.run`, only for `/quiet-token-bar`: shows or hides the bar and answers the command itself. It never sees or changes any other command.
+  - `session.compact`: only reads that a compaction happened, to refresh the bar. It never changes or blocks the compaction.
+  - `session.start`, `turn.complete` and `session.measure`: read the context window's breakdown to refresh the bar. Nothing is changed.
+  - `ui.render`: draws the bar above the prompt.
 - **Two values kept on your machine**: whether you closed the bar, and the last limits seen, to show them before the first response.
 
 ## Repository structure

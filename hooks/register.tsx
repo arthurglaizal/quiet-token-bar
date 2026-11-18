@@ -109,7 +109,7 @@ export const register: Register = on => {
       // the whole box so the hover area sits right around the icon, and a short tooltip.
       const iconButton = (b: { key: string; icon: string; tip: string; press: () => void }) => (
         <Box key={`${b.key}-box`} width={2} height={1} justifyContent="center" alignItems="center">
-          <Svg source={b.icon} alt={b.tip} width={12} height={12} />
+          <Svg source={b.icon} alt={b.tip} />
           <Box position="absolute" top={0} left={0} width={2} height={1}>
             <Button key={b.key} plain onPress={b.press}>
               {'\u00A0\u00A0'}
