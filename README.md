@@ -86,11 +86,11 @@ Built on [context-bar](https://github.com/hamzafer/claude-code-mods) by Hamza Za
 
 The Quiet mods share one design: grey by default, color only when something needs you. They stack neatly above the prompt.
 
-| Mod | Description |
-| --- | --- |
-| [Quiet&nbsp;Model](https://github.com/arthurglaizal/quiet-model) | Pick the model and effort in one quiet grey row. Or let Magic Router choose for each message. |
-| [Quiet&nbsp;Cost](https://github.com/arthurglaizal/quiet-cost) | What each reply cost, in one quiet grey line under it: an estimated price, the time and the tokens, and more figures you pick. |
-| [Quiet&nbsp;Server](https://github.com/arthurglaizal/quiet-server) | Launch your servers without leaving the conversation and catch the ones still running elsewhere: a count in the status line, the details in a pane. |
+| | Mod | Description |
+| :-: | --- | --- |
+| <a href="https://github.com/arthurglaizal/quiet-model"><img src="https://raw.githubusercontent.com/arthurglaizal/quiet-model/main/.claude-plugin/icon.png" alt="" width="40"></a> | [Quiet&nbsp;Model](https://github.com/arthurglaizal/quiet-model) | Pick the model and effort in one quiet grey row. Or let Magic Router choose for each message. |
+| <a href="https://github.com/arthurglaizal/quiet-cost"><img src="https://raw.githubusercontent.com/arthurglaizal/quiet-cost/main/.claude-plugin/icon.png" alt="" width="40"></a> | [Quiet&nbsp;Cost](https://github.com/arthurglaizal/quiet-cost) | What each reply cost, in one quiet grey line under it: an estimated price, the time and the tokens, and more figures you pick. |
+| <a href="https://github.com/arthurglaizal/quiet-server"><img src="https://raw.githubusercontent.com/arthurglaizal/quiet-server/main/.claude-plugin/icon.png" alt="" width="40"></a> | [Quiet&nbsp;Server](https://github.com/arthurglaizal/quiet-server) | Launch your servers without leaving the conversation and catch the ones still running elsewhere: a count in the status line, the details in a pane. |
 
 ## Support
 
